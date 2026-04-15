@@ -1,0 +1,639 @@
+{
+  "timestamp": "2026-03-07T17:53:31.609Z",
+  "projectId": "4c186f91-4074-42e9-93a8-ed19c00a0da6",
+  "totalTests": 62,
+  "passed": 58,
+  "failed": 4,
+  "results": [
+    {
+      "name": "GET /credits (with API key)",
+      "status": "PASS",
+      "elapsed": 775,
+      "result": {
+        "credits": 24950,
+        "userPaygateTier": "PAYGATE_TIER_TWO",
+        "sku": "G1_TIER2",
+        "serviceTier": "SERVICE_TIER_ADVANCED"
+      }
+    },
+    {
+      "name": "GET /credits (without API key)",
+      "status": "PASS",
+      "elapsed": 613,
+      "result": {
+        "status": 200,
+        "body": "{\n  \"credits\": 24950,\n  \"userPaygateTier\": \"PAYGATE_TIER_TWO\",\n  \"sku\": \"G1_TIER2\",\n  \"serviceTier\": \"SERVICE_TIER_ADVANCED\"\n}\n"
+      }
+    },
+    {
+      "name": "GET /credits (wrong API key)",
+      "status": "PASS",
+      "elapsed": 153,
+      "result": {
+        "status": 400
+      }
+    },
+    {
+      "name": "Get reCAPTCHA Enterprise token",
+      "status": "PASS",
+      "elapsed": 557,
+      "result": {
+        "length": 2148
+      }
+    },
+    {
+      "name": "Generate with model: veo_3_1_t2v_fast_ultra",
+      "status": "PASS",
+      "elapsed": 8610,
+      "result": {
+        "status": 200,
+        "operations": 1,
+        "credits": 24940,
+        "mediaIds": [
+          "4603795a-35aa-4ac2-b99d-e3ddd40dc9ce"
+        ],
+        "opStatus": "MEDIA_GENERATION_STATUS_PENDING"
+      }
+    },
+    {
+      "name": "Generate with model: veo_3_1_t2v_fast",
+      "status": "FAIL",
+      "elapsed": 863,
+      "error": "HTTP 403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The caller does not have permission\",\n    \"status\": \"PERMISSION_DENIED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"PUBLIC_ERROR_MODEL_ACCESS_DENIED\"\n      }\n    ]\n  }\n}\n"
+    },
+    {
+      "name": "Generate with model: veo_3_1_t2v_quality",
+      "status": "FAIL",
+      "elapsed": 1067,
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+    },
+    {
+      "name": "Generate with model: veo_2_t2v_fast",
+      "status": "FAIL",
+      "elapsed": 879,
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+    },
+    {
+      "name": "Generate with model: veo_2_t2v_quality",
+      "status": "FAIL",
+      "elapsed": 1038,
+      "error": "HTTP 400: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+    },
+    {
+      "name": "Generate with aspect ratio: VIDEO_ASPECT_RATIO_LANDSCAPE",
+      "status": "PASS",
+      "elapsed": 8224,
+      "result": {
+        "status": 200,
+        "credits": 24930
+      }
+    },
+    {
+      "name": "Generate with aspect ratio: VIDEO_ASPECT_RATIO_PORTRAIT",
+      "status": "PASS",
+      "elapsed": 9171,
+      "result": {
+        "status": 200,
+        "credits": 24920
+      }
+    },
+    {
+      "name": "Generate with aspect ratio: VIDEO_ASPECT_RATIO_SQUARE",
+      "status": "PASS",
+      "elapsed": 585,
+      "result": {
+        "status": 400,
+        "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid value at 'requests[0].aspect_ratio' (type.googleapis.com/google.internal.labs.aisandbox.proto.video.common.VideoAspectRatio), \\\"VIDEO_ASPECT_RATIO_SQUARE\\\"\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.goog"
+      }
+    },
+    {
+      "name": "Generate with aspect ratio: LANDSCAPE",
+      "status": "PASS",
+      "elapsed": 727,
+      "result": {
+        "status": 400,
+        "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid value at 'requests[0].aspect_ratio' (type.googleapis.com/google.internal.labs.aisandbox.proto.video.common.VideoAspectRatio), \\\"LANDSCAPE\\\"\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/googl"
+      }
+    },
+    {
+      "name": "Generate with aspect ratio: PORTRAIT",
+      "status": "PASS",
+      "elapsed": 608,
+      "result": {
+        "status": 400,
+        "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid value at 'requests[0].aspect_ratio' (type.googleapis.com/google.internal.labs.aisandbox.proto.video.common.VideoAspectRatio), \\\"PORTRAIT\\\"\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google"
+      }
+    },
+    {
+      "name": "Multiple requests in single batch (2 prompts)",
+      "status": "PASS",
+      "elapsed": 10607,
+      "result": {
+        "status": 200,
+        "operations": 2,
+        "mediaCount": 2
+      }
+    },
+    {
+      "name": "Generate with paygate tier: PAYGATE_TIER_ONE",
+      "status": "PASS",
+      "elapsed": 9330,
+      "result": {
+        "status": 200,
+        "credits": 24890
+      }
+    },
+    {
+      "name": "Generate with paygate tier: PAYGATE_TIER_TWO",
+      "status": "PASS",
+      "elapsed": 8072,
+      "result": {
+        "status": 200,
+        "credits": 24880
+      }
+    },
+    {
+      "name": "Generate with paygate tier: PAYGATE_TIER_THREE",
+      "status": "PASS",
+      "elapsed": 629,
+      "result": {
+        "status": 400,
+        "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid value at 'client_context.user_paygate_tier' (type.googleapis.com/google.internal.labs.aisandbox.proto.video.common.PaygateTier), \\\"PAYGATE_TIER_THREE\\\"\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleap"
+      }
+    },
+    {
+      "name": "Generate with paygate tier: PAYGATE_TIER_UNSPECIFIED",
+      "status": "PASS",
+      "elapsed": 8042,
+      "result": {
+        "status": 200,
+        "credits": 24870
+      }
+    },
+    {
+      "name": "Generate with tool: \"PINHOLE\"",
+      "status": "PASS",
+      "elapsed": 7977,
+      "result": {
+        "status": 200,
+        "credits": 24860
+      }
+    },
+    {
+      "name": "Generate with tool: \"FLOW\"",
+      "status": "PASS",
+      "elapsed": 550,
+      "result": {
+        "status": 400,
+        "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid value at 'client_context.tool' (type.googleapis.com/google.internal.labs.aisandbox.v1.ToolName), \\\"FLOW\\\"\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.BadRequest\",\n        \"fieldV"
+      }
+    },
+    {
+      "name": "Generate with tool: \"VIDEOFX\"",
+      "status": "PASS",
+      "elapsed": 504,
+      "result": {
+        "status": 400,
+        "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid value at 'client_context.tool' (type.googleapis.com/google.internal.labs.aisandbox.v1.ToolName), \\\"VIDEOFX\\\"\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.BadRequest\",\n        \"fie"
+      }
+    },
+    {
+      "name": "Generate with tool: \"IMAGEFX\"",
+      "status": "PASS",
+      "elapsed": 722,
+      "result": {
+        "status": 400,
+        "error": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Invalid value at 'client_context.tool' (type.googleapis.com/google.internal.labs.aisandbox.v1.ToolName), \\\"IMAGEFX\\\"\",\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.BadRequest\",\n        \"fie"
+      }
+    },
+    {
+      "name": "Generate with tool: \"\"",
+      "status": "PASS",
+      "elapsed": 7438,
+      "result": {
+        "status": 200,
+        "credits": 24850
+      }
+    },
+    {
+      "name": "Generate with useV2ModelConfig=true",
+      "status": "PASS",
+      "elapsed": 7909,
+      "result": {
+        "status": 200,
+        "credits": 24840
+      }
+    },
+    {
+      "name": "Generate with useV2ModelConfig=false",
+      "status": "PASS",
+      "elapsed": 7765,
+      "result": {
+        "status": 200,
+        "credits": 24830
+      }
+    },
+    {
+      "name": "Empty prompt",
+      "status": "PASS",
+      "elapsed": 6790,
+      "result": {
+        "status": 200,
+        "body": "{\n  \"operations\": [\n    {\n      \"operation\": {\n        \"name\": \"3ae3210507963932a67d782b7ccf62e9\"\n      },\n      \"sceneId\": \"\",\n      \"status\": \"MEDIA_GENERATION_STATUS_PENDING\"\n    }\n  ],\n  \"remainingCredits\": 24820,\n  \"workflows\": [\n    {\n      \"name\": \"4892f134-41c9-448d-a01d-6e909783ada7\",\n     "
+      }
+    },
+    {
+      "name": "Very long prompt (2000 chars)",
+      "status": "PASS",
+      "elapsed": 8411,
+      "result": {
+        "status": 200,
+        "credits": 24810
+      }
+    },
+    {
+      "name": "Special characters in prompt",
+      "status": "PASS",
+      "elapsed": 7957,
+      "result": {
+        "status": 200,
+        "credits": 24800
+      }
+    },
+    {
+      "name": "Invalid model key",
+      "status": "PASS",
+      "elapsed": 912,
+      "result": {
+        "status": 400,
+        "body": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Request contains an invalid argument.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+      }
+    },
+    {
+      "name": "No recaptcha token",
+      "status": "PASS",
+      "elapsed": 6626,
+      "result": {
+        "status": 200,
+        "body": "{\n  \"operations\": [\n    {\n      \"operation\": {\n        \"name\": \"fa4191e4a91d55fd5cf2117487f4819e\"\n      },\n      \"sceneId\": \"\",\n      \"status\": \"MEDIA_GENERATION_STATUS_PENDING\"\n    }\n  ],\n  \"remainingCredits\": 24790,\n  \"workflows\": [\n    {\n      \"name\": \"5b10e80b-a550-4ce7-b1f4-f374fb87ae7c\",\n     "
+      }
+    },
+    {
+      "name": "Invalid recaptcha token",
+      "status": "PASS",
+      "elapsed": 7086,
+      "result": {
+        "status": 200,
+        "body": "{\n  \"operations\": [\n    {\n      \"operation\": {\n        \"name\": \"5fd4ab09e65b0514ad5bdb37dba8c1a1\"\n      },\n      \"sceneId\": \"\",\n      \"status\": \"MEDIA_GENERATION_STATUS_PENDING\"\n    }\n  ],\n  \"remainingCredits\": 24780,\n  \"workflows\": [\n    {\n      \"name\": \"78c10a80-7172-4df7-a17e-d6356f040dd9\",\n     "
+      }
+    },
+    {
+      "name": "Invalid project ID",
+      "status": "PASS",
+      "elapsed": 7351,
+      "result": {
+        "status": 200,
+        "body": "{\n  \"operations\": [\n    {\n      \"operation\": {\n        \"name\": \"caf7898265d4eb2aad5bdb37dba8c1a1\"\n      },\n      \"sceneId\": \"\",\n      \"status\": \"MEDIA_GENERATION_STATUS_PENDING\"\n    }\n  ],\n  \"remainingCredits\": 24770,\n  \"workflows\": [\n    {\n      \"name\": \"b187f843-8718-4a1f-aec0-4da81190d97c\",\n     "
+      }
+    },
+    {
+      "name": "No Authorization header",
+      "status": "PASS",
+      "elapsed": 131,
+      "result": {
+        "status": 401
+      }
+    },
+    {
+      "name": "Expired/invalid token",
+      "status": "PASS",
+      "elapsed": 385,
+      "result": {
+        "status": 401
+      }
+    },
+    {
+      "name": "Poll generation status (batch)",
+      "status": "PASS",
+      "elapsed": 874,
+      "result": {
+        "status": 200,
+        "mediaCount": 4,
+        "statuses": [
+          "MEDIA_GENERATION_STATUS_SUCCESSFUL",
+          "MEDIA_GENERATION_STATUS_SUCCESSFUL",
+          "MEDIA_GENERATION_STATUS_SUCCESSFUL",
+          "MEDIA_GENERATION_STATUS_SUCCESSFUL"
+        ]
+      }
+    },
+    {
+      "name": "Poll status after 30s wait",
+      "status": "PASS",
+      "elapsed": 952,
+      "result": {
+        "statuses": {
+          "MEDIA_GENERATION_STATUS_SUCCESSFUL": 5
+        },
+        "fullResponse": {
+          "name": "4603795a-35aa-4ac2-b99d-e3ddd40dc9ce",
+          "projectId": "4c186f91-4074-42e9-93a8-ed19c00a0da6",
+          "workflowId": "93078bbe-ff5d-4e51-bffe-d92f12aaa5fd",
+          "workflowStepId": "CAE",
+          "mediaMetadata": {
+            "createTime": "2026-03-07T17:49:50.171461Z",
+            "requestData": {
+              "videoGenerationRequestData": {
+                "videoModelControlInput": {
+                  "videoModelName": "veo_3_1_t2v_fast_ultra",
+                  "videoGenerationMode": "VIDEO_GENERATION_MODE_TEXT_TO_VIDEO",
+                  "videoAspectRatio": "VIDEO_ASPECT_RATIO_LANDSCAPE"
+                }
+              },
+              "promptInputs": [
+                {
+                  "structuredPrompt": {
+                    "parts": [
+                      {
+                        "text": "API test - model veo_3_1_t2v_fast_ultra - tiny cat sleeping"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "clientPlatform": "CLIENT_PLATFORM_WEB"
+            },
+            "mediaStatus": {
+              "mediaGenerationStatus": "MEDIA_GENERATION_STATUS_SUCCESSFUL"
+            },
+            "visibility": "PRIVATE"
+          },
+          "video": {
+            "generatedVideo": {
+              "seed": 1288,
+              "model": "veo_3_1_t2v_fast_ultra",
+              "baseImageMediaGenerationId": "",
+              "isLooped": false,
+              "aspectRatio": "VIDEO_ASPECT_RATIO_LANDSCAPE"
+            },
+            "operation": {
+              "name": "33a5850ceef351b9a67d782b7ccf62e9"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Get video URL redirect (mediaId: 4603795a-35aa-4ac2-b99d-e3ddd40dc9ce)",
+      "status": "PASS",
+      "elapsed": 745,
+      "result": {
+        "status": 0,
+        "location": null,
+        "type": "opaqueredirect",
+        "url": "https://labs.google/fx/api/trpc/media.getMediaUrlRedirect?name=4603795a-35aa-4ac2-b99d-e3ddd40dc9ce&mediaUrlType=MEDIA_URL_TYPE_UNSPECIFIED"
+      }
+    },
+    {
+      "name": "Media URL type: MEDIA_URL_TYPE_UNSPECIFIED",
+      "status": "PASS",
+      "elapsed": 484,
+      "result": {
+        "redirected": true,
+        "finalUrl": "https://storage.googleapis.com/ai-sandbox-videofx/video/4603795a-35aa-4ac2-b99d-e3ddd40dc9ce?GoogleAccessId=labs-ai-sandbox-videoserver-prod@system.gserviceaccount.com&Expires=1772927600&Signature=W88"
+      }
+    },
+    {
+      "name": "Media URL type: MEDIA_URL_TYPE_THUMBNAIL",
+      "status": "PASS",
+      "elapsed": 838,
+      "result": {
+        "redirected": true,
+        "finalUrl": "https://storage.googleapis.com/ai-sandbox-videofx/image/4603795a-35aa-4ac2-b99d-e3ddd40dc9ce?GoogleAccessId=labs-ai-sandbox-videoserver-prod@system.gserviceaccount.com&Expires=1772927601&Signature=PvC"
+      }
+    },
+    {
+      "name": "Media URL type: MEDIA_URL_TYPE_VIDEO",
+      "status": "PASS",
+      "elapsed": 281,
+      "result": {
+        "status": 400,
+        "body": "Internal Error"
+      }
+    },
+    {
+      "name": "Media URL type: MEDIA_URL_TYPE_DOWNLOAD",
+      "status": "PASS",
+      "elapsed": 273,
+      "result": {
+        "status": 400,
+        "body": "Internal Error"
+      }
+    },
+    {
+      "name": "List workflows (GET /flowWorkflows)",
+      "status": "PASS",
+      "elapsed": 132,
+      "result": {
+        "status": 404,
+        "bodyPreview": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1"
+      }
+    },
+    {
+      "name": "Explore: GET /video:listModels (List available models)",
+      "status": "PASS",
+      "elapsed": 44,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Explore: GET /models (List models (alt))",
+      "status": "PASS",
+      "elapsed": 42,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Explore: GET /image:listModels (List image models)",
+      "status": "PASS",
+      "elapsed": 131,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Explore: POST /image:batchAsyncGenerateImageText (Image generation endpoint)",
+      "status": "PASS",
+      "elapsed": 125,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Explore: GET /flowProjects/4c186f91-4074-42e9-93a8-ed19c00a0da6 (Get project details)",
+      "status": "PASS",
+      "elapsed": 42,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Explore: GET /flowProjects (List projects)",
+      "status": "PASS",
+      "elapsed": 130,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Explore: GET /userProfile (User profile)",
+      "status": "PASS",
+      "elapsed": 124,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Explore: GET /subscription (Subscription info)",
+      "status": "PASS",
+      "elapsed": 42,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "tRPC: general.fetchUserAcknowledgement",
+      "status": "PASS",
+      "elapsed": 292,
+      "result": {
+        "status": 400,
+        "body": "{\"error\":{\"json\":{\"message\":\"[\\n  {\\n    \\\"code\\\": \\\"invalid_union\\\",\\n    \\\"unionErrors\\\": [\\n      {\\n        \\\"issues\\\": [\\n          {\\n            \\\"received\\\": \\\"FLOW_IMAGE_UPLOAD_CONSENT\\\",\\n            \\\"code\\\": \\\"invalid_literal\\\",\\n            \\\"expected\\\": \\\"ACKNOWLEDGEMENT_VERSION_UNSPECIFIED\\\",\\n            \\\"path\\\": [\\n              \\\"acknowledgementVersion\\\"\\n            ],\\n            \\\"message\\\": \\\"Invalid literal value, expected \\\\\\\"ACKNOWLEDGEMENT_VERSION_UNSPECIFIED\\\\\\\"\\\"\\n          }\\n        ],\\n        \\\"name\\\": \\\"ZodError\\\"\\n      },\\n      {\\n        \\\"issues\\\": [\\n          {\\n            \\\"received\\\": \\\"FLOW_IMAGE_UPLOAD_CONSENT\\\",\\n            \\\"code\\\": \\\"invalid_literal\\\",\\n            \\\"expected\\\": \\\"SEASON_ONE\\\",\\n            \\\"path\\\": [\\n              \\\"ack"
+      }
+    },
+    {
+      "name": "tRPC: media.getMediaUrlRedirect",
+      "status": "PASS",
+      "elapsed": 313,
+      "result": {
+        "status": 404,
+        "body": "Internal Error"
+      }
+    },
+    {
+      "name": "tRPC: general.fetchSubscription",
+      "status": "PASS",
+      "elapsed": 276,
+      "result": {
+        "status": 404,
+        "body": "{\"error\":{\"json\":{\"message\":\"No \\\"query\\\"-procedure on path \\\"general.fetchSubscription\\\"\",\"code\":-32004,\"data\":{\"code\":\"NOT_FOUND\",\"httpStatus\":404,\"path\":\"general.fetchSubscription\",\"zodError\":null},\"status\":404}}}"
+      }
+    },
+    {
+      "name": "tRPC: general.fetchUserProfile",
+      "status": "PASS",
+      "elapsed": 273,
+      "result": {
+        "status": 404,
+        "body": "{\"error\":{\"json\":{\"message\":\"No \\\"query\\\"-procedure on path \\\"general.fetchUserProfile\\\"\",\"code\":-32004,\"data\":{\"code\":\"NOT_FOUND\",\"httpStatus\":404,\"path\":\"general.fetchUserProfile\",\"zodError\":null},\"status\":404}}}"
+      }
+    },
+    {
+      "name": "tRPC: project.listProjects",
+      "status": "PASS",
+      "elapsed": 248,
+      "result": {
+        "status": 404,
+        "body": "{\"error\":{\"json\":{\"message\":\"No \\\"query\\\"-procedure on path \\\"project.listProjects\\\"\",\"code\":-32004,\"data\":{\"code\":\"NOT_FOUND\",\"httpStatus\":404,\"path\":\"project.listProjects\",\"zodError\":null},\"status\":404}}}"
+      }
+    },
+    {
+      "name": "tRPC: project.getProject",
+      "status": "PASS",
+      "elapsed": 251,
+      "result": {
+        "status": 400,
+        "body": "{\"error\":{\"json\":{\"message\":\"[\\n  {\\n    \\\"code\\\": \\\"invalid_union\\\",\\n    \\\"unionErrors\\\": [\\n      {\\n        \\\"issues\\\": [\\n          {\\n            \\\"code\\\": \\\"invalid_literal\\\",\\n            \\\"expected\\\": \\\"TOOL_NAME_UNSPECIFIED\\\",\\n            \\\"path\\\": [\\n              \\\"toolName\\\"\\n            ],\\n            \\\"message\\\": \\\"Invalid literal value, expected \\\\\\\"TOOL_NAME_UNSPECIFIED\\\\\\\"\\\"\\n          }\\n        ],\\n        \\\"name\\\": \\\"ZodError\\\"\\n      },\\n      {\\n        \\\"issues\\\": [\\n          {\\n            \\\"code\\\": \\\"invalid_literal\\\",\\n            \\\"expected\\\": \\\"MUSICLM_V2\\\",\\n            \\\"path\\\": [\\n              \\\"toolName\\\"\\n            ],\\n            \\\"message\\\": \\\"Invalid literal value, expected \\\\\\\"MUSICLM_V2\\\\\\\"\\\"\\n          }\\n        ],\\n        \\\"name\\\": \\\"ZodErro"
+      }
+    },
+    {
+      "name": "Image generation (batchAsyncGenerateImageText)",
+      "status": "PASS",
+      "elapsed": 455,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:u"
+      }
+    },
+    {
+      "name": "Image model: imagen_3_landscape",
+      "status": "PASS",
+      "elapsed": 485,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1"
+      }
+    },
+    {
+      "name": "Image model: nano_banana_2",
+      "status": "PASS",
+      "elapsed": 349,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1"
+      }
+    },
+    {
+      "name": "Image model: imagen_3_fast",
+      "status": "PASS",
+      "elapsed": 329,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1"
+      }
+    },
+    {
+      "name": "Image model: imagen_3",
+      "status": "PASS",
+      "elapsed": 460,
+      "result": {
+        "status": 404,
+        "body": "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 404 (Not Found)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:1"
+      }
+    }
+  ],
+  "generatedMedia": [
+    {
+      "name": "4603795a-35aa-4ac2-b99d-e3ddd40dc9ce",
+      "projectId": "4c186f91-4074-42e9-93a8-ed19c00a0da6",
+      "model": "veo_3_1_t2v_fast_ultra"
+    },
+    {
+      "name": "51e97296-4643-4b2d-bc75-c69cadfb314f",
+      "projectId": "4c186f91-4074-42e9-93a8-ed19c00a0da6",
+      "ar": "VIDEO_ASPECT_RATIO_LANDSCAPE"
+    },
+    {
+      "name": "4755b1ab-574e-43ca-857a-4d7fea1304f6",
+      "projectId": "4c186f91-4074-42e9-93a8-ed19c00a0da6",
+      "ar": "VIDEO_ASPECT_RATIO_PORTRAIT"
+    },
+    {
+      "name": "9be50948-428a-4535-82ec-ebb533c09739",
+      "projectId": "4c186f91-4074-42e9-93a8-ed19c00a0da6"
+    },
+    {
+      "name": "3abc550a-b579-4371-8ce1-1bd2ea2c2677",
+      "projectId": "4c186f91-4074-42e9-93a8-ed19c00a0da6"
+    }
+  ]
+}

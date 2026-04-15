@@ -1,0 +1,95 @@
+[
+  {
+    "model": "veo_3_1_t2v_fast_ultra",
+    "name": "Veo 3.1 Fast Ultra",
+    "status": "OK",
+    "httpStatus": 200,
+    "credits": 24760
+  },
+  {
+    "model": "veo_3_1_t2v_fast",
+    "name": "Veo 3.1 Fast",
+    "status": "FAIL",
+    "httpStatus": 403,
+    "error": "The caller does not have permission",
+    "reason": "PUBLIC_ERROR_MODEL_ACCESS_DENIED"
+  },
+  {
+    "model": "veo_3_1_t2v_quality",
+    "name": "Veo 3.1 Quality",
+    "status": "FAIL",
+    "httpStatus": 400,
+    "error": "Request contains an invalid argument.",
+    "reason": ""
+  },
+  {
+    "model": "veo_3_t2v_fast",
+    "name": "Veo 3 Fast (alt key)",
+    "status": "FAIL",
+    "httpStatus": 400,
+    "error": "Request contains an invalid argument.",
+    "reason": ""
+  },
+  {
+    "model": "veo_3_t2v_quality",
+    "name": "Veo 3 Quality (alt key)",
+    "status": "FAIL",
+    "httpStatus": 400,
+    "error": "Request contains an invalid argument.",
+    "reason": ""
+  },
+  {
+    "model": "veo_3_1_t2v_quality_ultra",
+    "name": "Veo 3.1 Quality Ultra (guess)",
+    "status": "FAIL",
+    "httpStatus": 400,
+    "error": "Request contains an invalid argument.",
+    "reason": ""
+  },
+  {
+    "model": "veo_2_t2v_fast",
+    "name": "Veo 2 Fast",
+    "status": "FAIL",
+    "httpStatus": 400,
+    "error": "Request contains an invalid argument.",
+    "reason": ""
+  },
+  {
+    "model": "veo_2_t2v_quality",
+    "name": "Veo 2 Quality",
+    "status": "FAIL",
+    "httpStatus": 400,
+    "error": "Request contains an invalid argument.",
+    "reason": ""
+  },
+  {
+    "model": "veo_2_t2v_fast_ultra",
+    "name": "Veo 2 Fast Ultra (guess)",
+    "status": "FAIL",
+    "httpStatus": 400,
+    "error": "Request contains an invalid argument.",
+    "reason": ""
+  },
+  {
+    "type": "aspect",
+    "value": "VIDEO_ASPECT_RATIO_LANDSCAPE",
+    "status": "OK"
+  },
+  {
+    "type": "aspect",
+    "value": "VIDEO_ASPECT_RATIO_PORTRAIT",
+    "status": "OK"
+  },
+  {
+    "type": "aspect",
+    "value": "VIDEO_ASPECT_RATIO_SQUARE",
+    "status": "FAIL",
+    "httpStatus": 400
+  },
+  {
+    "type": "aspect",
+    "value": "VIDEO_ASPECT_RATIO_UNSPECIFIED",
+    "status": "FAIL",
+    "httpStatus": 400
+  }
+]
